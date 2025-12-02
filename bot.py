@@ -10,9 +10,10 @@ from aiogram.filters import CommandStart, Command
 from aiohttp import ClientSession
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-TELEGRAM_TOKEN = "8266831201:AAFLE8lLi2LuHEFvmUpo0B6Ed1VP1VuwXVQ"
+import os
 
-OPENAI_API_KEY = "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"
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 MEMORY_FILE = "memory.json"  # здесь бот хранит память
 
@@ -549,3 +550,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
